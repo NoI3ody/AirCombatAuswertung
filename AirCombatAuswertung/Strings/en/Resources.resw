@@ -699,6 +699,30 @@
   <data name="50_Scoreboards_WW2_Sum.Header" xml:space="preserve">
     <value>Sum</value>
   </data>
+  <data name="60_Results_cbEPA.Content" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Startlist Button EPA</comment>
+  </data>
+  <data name="60_Results_cbEPA.Label" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Startlist Button EPA</comment>
+  </data>
+  <data name="60_Results_cbWW1.Content" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Startlist Button WW1</comment>
+  </data>
+  <data name="60_Results_cbWW1.Label" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Startlist Button WW1</comment>
+  </data>
+  <data name="60_Results_cbWW2.Content" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Startlist Button WW2</comment>
+  </data>
+  <data name="60_Results_cbWW2.Label" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Startlist Button WW2</comment>
+  </data>
   <data name="90_Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
     <comment>Personalization text for Settings</comment>

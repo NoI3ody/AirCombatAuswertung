@@ -23,6 +23,7 @@
     <None Remove="Views\41_Registration.xaml" />
     <None Remove="Views\42_Startlist.xaml" />
     <None Remove="Views\50_Scoreboards.xaml" />
+    <None Remove="Views\60_Results.xaml" />
     <None Remove="Views\90_Settings.xaml" />
     <None Remove="Views\91_About.xaml" />
     <None Remove="Views\99_Debug.xaml" />
@@ -57,6 +58,11 @@
        package has not yet been restored -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnablePreviewMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\60_Results.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\50_Scoreboards.xaml">

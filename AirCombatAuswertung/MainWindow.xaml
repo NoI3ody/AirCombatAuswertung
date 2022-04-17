@@ -82,8 +82,7 @@
             </NavigationViewItem>
             <NavigationViewItem
                     x:Uid="00_Navigation_Result"
-                    Tag="AirCombatAuswertung.Views._60_Results"
-                    IsEnabled="False">
+                    Tag="AirCombatAuswertung.Views._60_Results">
                 <NavigationViewItem.Icon>
                     <FontIcon
                             FontFamily="Segoe MDL2 Assets"
