@@ -1,0 +1,7 @@
+﻿-Allgemein	-> InputValidation
+			-> Drucken
+			-> Selectierte Buttons nicht ausgrauen (Startlist, Scoreboards)
+-Nennung	-> Nach eingabe eines Piloten Focus wieder auf Vorname setzen
+			-> Nach eingabe eines Judges Focus wieder auf Vorname setzen
+-Startliste -> externe Judges mitgenerieren
+-Settings	-> Caption Buttons Colors Win10

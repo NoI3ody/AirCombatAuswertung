@@ -1,0 +1,45 @@
+﻿29.08.2021 - V 2.0.2.0
+- Umstellung auf WinUI 3
+19.06.2020 - V 2.0.1.0
+- Diverse Änderungen im Hintergrund um die App flexibler zu gestalten
+- Multilanguage Support
+15.06.2020 - V 2.0.0.1
+- Bugfixing und Datenverbesserungen
+09.02.2020 - V 2.0.0.0
+- Umstellung von WindowsForms auf UniversalWindowsPlattform
+30.09.2019 - V 1.0.0.8
+- externe Judges hinzugefügt
+- In den Scoreboards werden die Modellpunkte + Summe angezeigt
+- KLASSEN.xml wird automatisch erzeugt wenn diese nicht vorhanden ist
+- In den Scoreboards ändert sich der Checkbox-Text in Abhängigkeit der Checkboxen
+- Startlistengenerierung ohne Judges
+27.09.2019 - V 1.0.0.7
+- Judges werden jetzt zusätzlich zur Startliste berechnet
+- ",";"." Dezimaltrennzeichenauswertung auf aktuelle Systemsprache angepasst
+- Bug in der Ergebnisanzeige behoben, Piloten die die Klasse nicht fliegen werden nicht mehr angezeigt
+- Bug in der Auswerteliste behoben, Piloten werden nun richtig anhand ihrer Klasse gefiltert
+26.03.2019 - V 1.0.0.6
+- Startlistenerzeugung Checkbox "Ignoriere Doppelte Frequenzen" hinzugefügt, hiermit können mit Zustimmung der Piloten auch gleiche Frequenzen im Heat geflogen werden.
+01.10.2018 - V 1.0.0.5
+- Startlisten werden beim erzeugen eines neuen Bewerbs ebenfalls gelöscht, um Zugriffe auf leere Speicherbereiche zu vermeiden
+- Die erzeugten Startlisten werden nun gespeichert und können bei erneutem öffnen der Startliste abgerufen werden
+- Wird in der Nennung ein Pilot hinzugefügt,gelöscht oder geändert wird die entsprechende Startliste ebenfalls gelöscht
+- In Nennung Sicherheitsabfrage eingefügt ob Pilot wirklich gelöscht werden soll
+- Der Reiter Scoreboard wurde an die gleiche Reihenfolge, wie es auf den Scoreboards steht angeglichen
+- Bug in der Tab-Reihenfolge in den Scoreboards behoben
+- Bug in der EPA-Auswertung behoben, 2-Mot und Flat-Fuselage wird nur vergeben wenn Flugzeug auch in der Luft war
+- OpenOffice-Support für Ergebnislistenexport hinzugefügt
+- 2,5ccm Anzeige in den live Ergebnislisten
+28.09.2018 - V 1.0.0.4
+- About-Fenster optimiert
+19.04.2018 - V 1.0.0.3
+- In Startlistenerzeugung zu jeder Runde und zu jedem Heat wird die Klasse hinzugefügt
+05.04.2018 - V 1.0.0.2
+- In Ergebnisexport für Excel - Titelzeile mit Ort & Klasse eingefügt
+28.03.2018 - V 1.0.0.1	
+- Changelog hinzugefügt
+- SplashScreen hinzugefügt
+- In Nennung Tooltip für Kanal hinzugefügt
+- In Nennung Kanaleingabe 2.4 wird als 2,4 ausgewertet
+27.03.2018 - V 1.0		
+- Veröffentlichung

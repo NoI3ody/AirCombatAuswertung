@@ -1,0 +1,163 @@
+﻿<Page
+    x:Class="AirCombatAuswertung.Views._40_Eventoptions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AirCombatAuswertung.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <RelativePanel>
+            <StackPanel x:Name="Bewerb"
+                        Margin="{StaticResource MediumLeftRightMargin}">
+                <TextBlock x:Uid="40_Eventoptions_Event"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"
+                           Margin="{StaticResource SmallTopMargin}"/>
+                <TextBox x:Uid="40_Eventoptions_Eventlocation"
+                         Margin="{StaticResource SmallTopMargin}"
+                         Text="{x:Bind ViewModel.Location, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         MaxLength="{x:Bind ViewModel.Location_MaxLength,Mode=OneWay}"/>
+                <DatePicker x:Uid="40_Eventoptions_Date"
+                            Margin="{StaticResource SmallTopMargin}"
+                            Date="{x:Bind ViewModel.Date, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel x:Name="WW2"
+                        Margin="{StaticResource MediumLeftRightMargin}"
+                        RelativePanel.Below="Bewerb">
+                <TextBlock x:Uid="40_Eventoptions_WW2"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"
+                           Margin="{StaticResource SmallTopMargin}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW2_Rounds"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.RoundsWW2, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.RoundsWW2_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.RoundsWW2_max,Mode=OneWay}"/>
+                <CheckBox x:Uid="40_Eventoptions_WW2_Final"                          
+                          Visibility="{x:Bind ViewModel.CbFinalWW2,Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.FinalWW2,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW2_FinalPilots"
+                           Visibility="{x:Bind ViewModel.NbFinalPilotsWW2,Mode=OneWay}"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.FinalPilotsWW2, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.FinalPilotsWW2_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.FinalPilotsWW2_max,Mode=OneWay}"/>
+                <CheckBox x:Uid="40_Eventoptions_WW2_SemiFinal"
+                          Visibility="{x:Bind ViewModel.CbSemiFinalWW2,Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.SemiFinalWW2,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW2_SemiFinalPilots"
+                           Visibility="{x:Bind ViewModel.NbSemiFinalPilotsWW2,Mode=OneWay}"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.SemiFinalPilotsWW2, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.SemiFinalPilotsWW2_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.SemiFinalPilotsWW2_max,Mode=OneWay}"/>
+            </StackPanel>
+            <StackPanel x:Name="WW1"
+                        Margin="{StaticResource MediumLeftRightMargin}"
+                        RelativePanel.Below="WW2">
+                <TextBlock x:Uid="40_Eventoptions_WW1"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"
+                           Margin="{StaticResource SmallTopMargin}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW1_Rounds"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.RoundsWW1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.RoundsWW1_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.RoundsWW1_max,Mode=OneWay}"/>
+                <CheckBox x:Uid="40_Eventoptions_WW1_Final"
+                          Visibility="{x:Bind ViewModel.CbFinalWW1,Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.FinalWW1,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW1_FinalPilots"
+                           Visibility="{x:Bind ViewModel.NbFinalPilotsWW1,Mode=OneWay}"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.FinalPilotsWW1, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.FinalPilotsWW1_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.FinalPilotsWW1_max,Mode=OneWay}"/>
+                <CheckBox x:Uid="40_Eventoptions_WW1_SemiFinal"
+                          Visibility="{x:Bind ViewModel.CbSemiFinalWW1,Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.SemiFinalWW1,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW1_SemiFinalPilots"
+                           Visibility="{x:Bind ViewModel.NbSemiFinalPilotsWW1,Mode=OneWay}"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.SemiFinalPilotsWW1, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.SemiFinalPilotsWW1_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.SemiFinalPilotsWW1_max,Mode=OneWay}"/>
+            </StackPanel>
+            <StackPanel x:Name="EPA"
+                        Margin="{StaticResource MediumLeftRightMargin}"
+                        RelativePanel.Below="WW1">
+                <TextBlock x:Uid="40_Eventoptions_EPA"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"
+                           Margin="{StaticResource SmallTopMargin}"/>
+                <NumberBox x:Uid="40_Eventoptions_EPA_Rounds"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.RoundsEPA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.RoundsEPA_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.RoundsEPA_max,Mode=OneWay}"/>
+                <CheckBox x:Uid="40_Eventoptions_EPA_Final"
+                          x:Name="cbFinalEPA"
+                          Visibility="{x:Bind ViewModel.CbFinalEPA,Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.FinalEPA,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox x:Uid="40_Eventoptions_WW1_FinalPilots"
+                           Visibility="{x:Bind ViewModel.NbFinalPilotsEPA,Mode=OneWay}"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.FinalPilotsEPA, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.FinalPilotsEPA_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.FinalPilotsEPA_max,Mode=OneWay}"/>
+                <CheckBox x:Uid="40_Eventoptions_EPA_SemiFinal"
+                          Visibility="{x:Bind ViewModel.CbSemiFinalEPA,Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.SemiFinalEPA,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox x:Uid="40_Eventoptions_EPA_SemiFinalPilots"
+                           Visibility="{x:Bind ViewModel.NbSemiFinalPilotsEPA,Mode=OneWay}"
+                           Margin="{StaticResource SmallTopMargin}"
+                           AcceptsExpression="False"
+                           SpinButtonPlacementMode="Inline"
+                           LargeChange="1"
+                           SmallChange="1"
+                           MinWidth="170"
+                           Value="{x:Bind ViewModel.SemiFinalPilotsEPA, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           Minimum="{x:Bind ViewModel.SemiFinalPilotsEPA_min,Mode=OneWay}"
+                           Maximum="{x:Bind ViewModel.SemiFinalPilotsEPA_max,Mode=OneWay}"/>
+            </StackPanel>
+        </RelativePanel>
+    </ScrollViewer>
+</Page>

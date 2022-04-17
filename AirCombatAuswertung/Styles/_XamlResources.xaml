@@ -1,0 +1,61 @@
+﻿<ResourceDictionary
+    x:Class="AirCombatAuswertung.Styles.XamlRessources"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AirCombatAuswertung.Styles"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <DataTemplate x:Name="StartlistTemplate"
+                  x:FieldModifier="internal">
+        <Grid Margin="{ThemeResource SmallBottomMargin}">
+            <RelativePanel>
+                <TextBlock x:Uid="42_Startlist_Round"
+                                           x:Name="tbStartlist_Round"/>
+                <TextBlock x:Name="tbStartlist_Roundnr"
+                                           Text="{Binding Round}"
+                                           RelativePanel.RightOf="tbStartlist_Round"
+                                           Margin="{ThemeResource XSmallLeftMargin}"/>
+                <TextBlock x:Uid="42_Startlist_Heat"
+                                           x:Name="tbStartlist_Heat"
+                                           RelativePanel.RightOf="tbStartlist_Roundnr"
+                                           Margin="{ThemeResource MediumLeftMargin}"/>
+                <TextBlock x:Name="tbStartlist_Heatnr"
+                                           Text="{Binding Heat}"
+                                           RelativePanel.RightOf="tbStartlist_Heat"
+                                           Margin="{ThemeResource XSmallLeftMargin}"/>
+                <ItemsControl x:Name="tbStartlist_Frequenzy"
+                                              ItemsSource="{Binding Frequency}"
+                                              RelativePanel.Below="tbStartlist_Round"
+                                              Margin="{ThemeResource SmallTopMargin}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl x:Name="tbStartlist_Pilots"
+                                              ItemsSource="{Binding Pilots}"
+                                              RelativePanel.Below="tbStartlist_Round"
+                                              RelativePanel.RightOf="tbStartlist_Frequenzy"
+                                              Margin="{ThemeResource SmallLeftTopMargin}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl ItemsSource="{Binding Judges}"
+                                              RelativePanel.Below="tbStartlist_Round"
+                                              RelativePanel.RightOf="tbStartlist_Pilots"
+                                              Margin="{ThemeResource SmallLeftTopMargin}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </RelativePanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="AirCombatAuswertung.Views._91_About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AirCombatAuswertung.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Margin="{StaticResource SmallLeftTopRightBottomMargin}">
+            <TextBlock x:Uid="91_About" 
+                       Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" 
+                           Text="{x:Bind VersionDescription, Mode=OneWay}" />
+                <TextBlock
+                    x:Uid="91_About_AboutDescription"
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Style="{ThemeResource BodyTextBlockStyle}" />
+                <TextBlock
+                    x:Uid="91_About_Copyright"
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                <TextBlock
+                    x:Uid="91_About_Usedthirdparty"
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                <TextBlock 
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Text="{x:Bind NugetPackages, Mode=OneWay}"/>
+            </StackPanel>
+            <TextBlock x:Uid="91_About_Changelog" 
+                       Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" 
+                           Text="{x:Bind Changelog, Mode=OneWay}" />
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

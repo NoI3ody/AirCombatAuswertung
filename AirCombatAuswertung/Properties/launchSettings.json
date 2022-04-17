@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AirCombatAuswertung (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AirCombatAuswertung (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

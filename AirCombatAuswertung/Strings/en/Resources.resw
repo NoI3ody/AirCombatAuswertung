@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="00_NavigationView.PaneTitle" xml:space="preserve">
+    <value>AirCombatEvaluation</value>
+    <comment>Navigation view pane title text</comment>
+  </data>
+  <data name="00_Navigation_About.Content" xml:space="preserve">
+    <value>About</value>
+    <comment>About</comment>
+  </data>
+  <data name="00_Navigation_Copyright.Text" xml:space="preserve">
+    <value>©2018-2020  Ing. Martin Herzele and Ing. Hubert Witschnig</value>
+    <comment>Application Copyright Information</comment>
+  </data>
+  <data name="00_Navigation_Debug.Content" xml:space="preserve">
+    <value>Debug</value>
+    <comment>Navigation view item name for Debug</comment>
+  </data>
+  <data name="00_Navigation_Event.Content" xml:space="preserve">
+    <value>Event</value>
+    <comment>Navigation view item header name for Event</comment>
+  </data>
+  <data name="00_Navigation_Event_options.Content" xml:space="preserve">
+    <value>Eventoptions</value>
+    <comment>Navigation view item name for Eventoptions</comment>
+  </data>
+  <data name="00_Navigation_Home.Content" xml:space="preserve">
+    <value>Start</value>
+    <comment>Navigation view item name for Homebutton</comment>
+  </data>
+  <data name="00_Navigation_Load.Content" xml:space="preserve">
+    <value>Load...</value>
+    <comment>Navigation view item name for Loadbutton</comment>
+  </data>
+  <data name="00_Navigation_Main.Content" xml:space="preserve">
+    <value>General</value>
+    <comment>Navigation view item header name for General</comment>
+  </data>
+  <data name="00_Navigation_New.Content" xml:space="preserve">
+    <value>New...</value>
+    <comment>Navigation view item name for Newbutton</comment>
+  </data>
+  <data name="00_Navigation_Registration.Content" xml:space="preserve">
+    <value>Registration</value>
+    <comment>Navigation view item name for Registration</comment>
+  </data>
+  <data name="00_Navigation_Result.Content" xml:space="preserve">
+    <value>Results</value>
+    <comment>Navigation view item name for Results</comment>
+  </data>
+  <data name="00_Navigation_Rules.Content" xml:space="preserve">
+    <value>Rules</value>
+    <comment>Navigation view item name for Rulesbutton</comment>
+  </data>
+  <data name="00_Navigation_Save.Content" xml:space="preserve">
+    <value>Save...</value>
+    <comment>Navigation view item name for Savebutton</comment>
+  </data>
+  <data name="00_Navigation_Scoreboard.Content" xml:space="preserve">
+    <value>Scoreboards</value>
+    <comment>Navigation view item name for Scoreboards</comment>
+  </data>
+  <data name="00_Navigation_Settings.Content" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Navigation view item name for Settings</comment>
+  </data>
+  <data name="00_Navigation_Starting_list.Content" xml:space="preserve">
+    <value>Start list</value>
+    <comment>Navigation view item name for Startinglist</comment>
+  </data>
+  <data name="10_Home_Title.Text" xml:space="preserve">
+    <value>AirCombat Evaluation</value>
+    <comment>Application display name</comment>
+  </data>
+  <data name="40_Eventoptions_Date.Header" xml:space="preserve">
+    <value>Date</value>
+    <comment>Date text for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EPA.Text" xml:space="preserve">
+    <value>Options for EPA</value>
+    <comment>EPA Header text for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EPA_Final.Content" xml:space="preserve">
+    <value>+ Final?</value>
+    <comment>EPA FinalCheckbox Content for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EPA_FinalPilots.Header" xml:space="preserve">
+    <value>Pilots in the final</value>
+    <comment>EPA PilotsinFinal Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EPA_Rounds.Header" xml:space="preserve">
+    <value>Total rounds</value>
+    <comment>EPA Rounds Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EPA_SemiFinal.Content" xml:space="preserve">
+    <value>+ Semi final?</value>
+    <comment>EPA SemiFinalCheckbox Content for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EPA_SemiFinalPilots.Header" xml:space="preserve">
+    <value>Pilots in the semi final</value>
+    <comment>EPA PilotsintheSemifinal Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_Event.Text" xml:space="preserve">
+    <value>Event</value>
+    <comment>Event text for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_EventLocation.Header" xml:space="preserve">
+    <value>Event location</value>
+    <comment>EventLocation text for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW1.Text" xml:space="preserve">
+    <value>Options for WW1</value>
+    <comment>WW1 Header text for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW1_Final.Content" xml:space="preserve">
+    <value>+ Final?</value>
+    <comment>WW1 FinalCheckbox Content for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW1_FinalPilots.Header" xml:space="preserve">
+    <value>Pilots in the final</value>
+    <comment>WW1 PilotsinFinal Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW1_Rounds.Header" xml:space="preserve">
+    <value>Total rounds</value>
+    <comment>WW1 Rounds Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW1_SemiFinal.Content" xml:space="preserve">
+    <value>+ Semi final?</value>
+    <comment>WW1 SemiFinalCheckbox Content for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW1_SemiFinalPilots.Header" xml:space="preserve">
+    <value>Pilots in the semi final</value>
+    <comment>WW1 PilotsintheSemifinal Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW2.Text" xml:space="preserve">
+    <value>Options for WW2</value>
+    <comment>WW2 Header text for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW2_Final.Content" xml:space="preserve">
+    <value>+ Final?</value>
+    <comment>WW2 FinalCheckbox Content for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW2_FinalPilots.Header" xml:space="preserve">
+    <value>Pilots in the final</value>
+    <comment>WW2 PilotsinFinal Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW2_Rounds.Header" xml:space="preserve">
+    <value>Total rounds</value>
+    <comment>WW2 Rounds Header for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW2_SemiFinal.Content" xml:space="preserve">
+    <value>+ Semi final?</value>
+    <comment>WW2 SemiFinalCheckbox Content for Eventoptions</comment>
+  </data>
+  <data name="40_Eventoptions_WW2_SemiFinalPilots.Header" xml:space="preserve">
+    <value>Pilots in the semi final</value>
+    <comment>WW2 PilotsintheSemifinal Header for Eventoptions</comment>
+  </data>
+  <data name="41_Registration_bAddJ.Label" xml:space="preserve">
+    <value>New judge</value>
+    <comment>Commandbarbutton Label Registration new Judge</comment>
+  </data>
+  <data name="41_Registration_bAddP.Label" xml:space="preserve">
+    <value>Add pilot</value>
+    <comment>Commandbarbutton Label Registration new Pilot</comment>
+  </data>
+  <data name="41_Registration_bDelJ.Label" xml:space="preserve">
+    <value>Delete judge</value>
+    <comment>Commandbarbutton Label Registration delete Judge</comment>
+  </data>
+  <data name="41_Registration_bDelP.Label" xml:space="preserve">
+    <value>Delete pilot</value>
+    <comment>Commandbarbutton Label Registration delet Pilot</comment>
+  </data>
+  <data name="41_Registration_cbEPA.Content" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Registration EPA Label</comment>
+  </data>
+  <data name="41_Registration_cbWW1.Content" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Registration WW1 Label</comment>
+  </data>
+  <data name="41_Registration_cbWW2.Content" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Registration WW2 Label</comment>
+  </data>
+  <data name="41_Registration_Channel.Header" xml:space="preserve">
+    <value>Channel</value>
+    <comment>Registration Channel Label</comment>
+  </data>
+  <data name="41_Registration_Channel.PlaceholderText" xml:space="preserve">
+    <value>2,4</value>
+    <comment>Registration Channel PlaceholderText</comment>
+  </data>
+  <data name="41_Registration_Classes.Text" xml:space="preserve">
+    <value>Classes</value>
+    <comment>Registration Classes Label</comment>
+  </data>
+  <data name="41_Registration_Class_Dialog.PrimaryButtonText" xml:space="preserve">
+    <value>Ok</value>
+    <comment>Registration Class Dialog PrimaryButtonText</comment>
+  </data>
+  <data name="41_Registration_Class_Dialog.SecondaryButtonText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Registration Class Dialog SecondaryButtonText</comment>
+  </data>
+  <data name="41_Registration_Class_Dialog.Title" xml:space="preserve">
+    <value>Select classes</value>
+    <comment>Registration Class Dialog Title</comment>
+  </data>
+  <data name="41_Registration_dgJ_FirstName.Header" xml:space="preserve">
+    <value>First name</value>
+    <comment>Registration Datagrid First name Header</comment>
+  </data>
+  <data name="41_Registration_dgJ_LastName.Header" xml:space="preserve">
+    <value>Last name</value>
+    <comment>Registration Datagrid Last name Header</comment>
+  </data>
+  <data name="41_Registration_dgJ_Startnr.Header" xml:space="preserve">
+    <value>Judgenr</value>
+    <comment>Registration Datagrid Start number Header</comment>
+  </data>
+  <data name="41_Registration_dgP_Channel.Header" xml:space="preserve">
+    <value>Channel</value>
+    <comment>Registration Datagrid Channel Header</comment>
+  </data>
+  <data name="41_Registration_dgP_FirstName.Header" xml:space="preserve">
+    <value>First name</value>
+    <comment>Registration Datagrid First name Header</comment>
+  </data>
+  <data name="41_Registration_dgP_FliesEPA.Header" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Registration Datagrid FliesEPA Header</comment>
+  </data>
+  <data name="41_Registration_dgP_FliesWW1.Header" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Registration Datagrid FliesWW1 Header</comment>
+  </data>
+  <data name="41_Registration_dgP_FliesWW2.Header" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Registration Datagrid FliesWW2 Header</comment>
+  </data>
+  <data name="41_Registration_dgP_IsJudge.Header" xml:space="preserve">
+    <value>Pilot judge</value>
+    <comment>Registration Datagrid IsJudge Header</comment>
+  </data>
+  <data name="41_Registration_dgP_LastName.Header" xml:space="preserve">
+    <value>Last name</value>
+    <comment>Registration Datagrid Last name Header</comment>
+  </data>
+  <data name="41_Registration_dgP_Nation.Header" xml:space="preserve">
+    <value>Nation</value>
+    <comment>Registration Datagrid Nation Header</comment>
+  </data>
+  <data name="41_Registration_dgP_Startnr.Header" xml:space="preserve">
+    <value>Startnr</value>
+    <comment>Registration Datagrid Start number Header</comment>
+  </data>
+  <data name="41_Registration_FirstName.Header" xml:space="preserve">
+    <value>First name</value>
+    <comment>Registration First Name Label</comment>
+  </data>
+  <data name="41_Registration_FirstName.PlaceholderText" xml:space="preserve">
+    <value>John</value>
+    <comment>Registration First Name PlaceholderText</comment>
+  </data>
+  <data name="41_Registration_FirstNameJudge.Header" xml:space="preserve">
+    <value>First name</value>
+    <comment>Registration First Name Judge Label</comment>
+  </data>
+  <data name="41_Registration_FirstNameJudge.PlaceholderText" xml:space="preserve">
+    <value>John</value>
+    <comment>Registration First Name Judge PlaceholderText</comment>
+  </data>
+  <data name="41_Registration_Judges.Text" xml:space="preserve">
+    <value>Judges</value>
+    <comment>Registration Judges Label</comment>
+  </data>
+  <data name="41_Registration_LastName.Header" xml:space="preserve">
+    <value>Last name</value>
+    <comment>Registration Last Name Label</comment>
+  </data>
+  <data name="41_Registration_LastName.PlaceholderText" xml:space="preserve">
+    <value>Doe</value>
+    <comment>Registration Last Name PlaceholderText</comment>
+  </data>
+  <data name="41_Registration_LastNameJudge.Header" xml:space="preserve">
+    <value>Last name</value>
+    <comment>Registration Last Name Judge Label</comment>
+  </data>
+  <data name="41_Registration_LastNameJudge.PlaceholderText" xml:space="preserve">
+    <value>Doe</value>
+    <comment>Registration Last Name Judge PlaceholderText</comment>
+  </data>
+  <data name="41_Registration_Nation.Header" xml:space="preserve">
+    <value>Nation</value>
+    <comment>Registration Nation Label</comment>
+  </data>
+  <data name="41_Registration_Nation.PlaceholderText" xml:space="preserve">
+    <value>AUT</value>
+    <comment>Registration Nation PlaceholderText</comment>
+  </data>
+  <data name="41_Registration_Pilotjudge.Text" xml:space="preserve">
+    <value>Pilot judge</value>
+    <comment>Registration Pilotjudge Label</comment>
+  </data>
+  <data name="41_Registration_Pilots.Text" xml:space="preserve">
+    <value>Pilots</value>
+    <comment>Pilots text for Registration</comment>
+  </data>
+  <data name="42_Startlist_cbEPA.Content" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Startlist Button EPA</comment>
+  </data>
+  <data name="42_Startlist_cbEPA.Label" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Startlist Button EPA</comment>
+  </data>
+  <data name="42_Startlist_cbWW1.Content" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Startlist Button WW1</comment>
+  </data>
+  <data name="42_Startlist_cbWW1.Label" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Startlist Button WW1</comment>
+  </data>
+  <data name="42_Startlist_cbWW2.Content" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Startlist Button WW2</comment>
+  </data>
+  <data name="42_Startlist_cbWW2.Label" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Startlist Button WW2</comment>
+  </data>
+  <data name="42_Startlist_final" xml:space="preserve">
+    <value>final</value>
+  </data>
+  <data name="42_Startlist_Generate.Content" xml:space="preserve">
+    <value>Generate startlist</value>
+    <comment>Button Generate Startlist</comment>
+  </data>
+  <data name="42_Startlist_GeneratewithoutJudges.Content" xml:space="preserve">
+    <value>Generate without judges</value>
+  </data>
+  <data name="42_Startlist_Heat.Text" xml:space="preserve">
+    <value>Heat: </value>
+  </data>
+  <data name="42_Startlist_IgnoredoubleFrequency.Content" xml:space="preserve">
+    <value>Ignore double frequencies</value>
+  </data>
+  <data name="42_Startlist_NumberofHeats.Header" xml:space="preserve">
+    <value>Heats to fly</value>
+  </data>
+  <data name="42_Startlist_NumberofHeats.PlaceholderText" xml:space="preserve">
+    <value>Pleace, select a class</value>
+  </data>
+  <data name="42_Startlist_Pilotsfound.Header" xml:space="preserve">
+    <value>Number of Pilots</value>
+  </data>
+  <data name="42_Startlist_Pilotsfound.PlaceholderText" xml:space="preserve">
+    <value>Please, select a class</value>
+  </data>
+  <data name="42_Startlist_PilotsperHeat.Header" xml:space="preserve">
+    <value>Pilots/Heat</value>
+  </data>
+  <data name="42_Startlist_PilotsperHeat.PlaceholderText" xml:space="preserve">
+    <value>Pleace, select a class</value>
+  </data>
+  <data name="42_Startlist_Print.Content" xml:space="preserve">
+    <value>Print startlist</value>
+  </data>
+  <data name="42_Startlist_Round.Text" xml:space="preserve">
+    <value>Round: </value>
+  </data>
+  <data name="42_Startlist_Roundstofly.Header" xml:space="preserve">
+    <value>Rounds to fly</value>
+  </data>
+  <data name="42_Startlist_Roundstofly.PlaceholderText" xml:space="preserve">
+    <value>Please, select a class</value>
+  </data>
+  <data name="42_Startlist_semifinal" xml:space="preserve">
+    <value>semi final</value>
+  </data>
+  <data name="50_Scoreboards_cbEPA.Content" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Startlist Button EPA</comment>
+  </data>
+  <data name="50_Scoreboards_cbEPA.Label" xml:space="preserve">
+    <value>EPA</value>
+    <comment>Startlist Button EPA</comment>
+  </data>
+  <data name="50_Scoreboards_cbRnd1.Content" xml:space="preserve">
+    <value>Round 1</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd1.Label" xml:space="preserve">
+    <value>Round 1</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd10.Content" xml:space="preserve">
+    <value>Round 10</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd10.Label" xml:space="preserve">
+    <value>Round 10</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd2.Content" xml:space="preserve">
+    <value>Round 2</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd2.Label" xml:space="preserve">
+    <value>Round 2</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd3.Content" xml:space="preserve">
+    <value>Round 3</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd3.Label" xml:space="preserve">
+    <value>Round 3</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd4.Content" xml:space="preserve">
+    <value>Round 4</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd4.Label" xml:space="preserve">
+    <value>Round 4</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd5.Content" xml:space="preserve">
+    <value>Round 5</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd5.Label" xml:space="preserve">
+    <value>Round 5</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd6.Content" xml:space="preserve">
+    <value>Round 6</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd6.Label" xml:space="preserve">
+    <value>Round 6</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd7.Content" xml:space="preserve">
+    <value>Round 7</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd7.Label" xml:space="preserve">
+    <value>Round 7</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd8.Content" xml:space="preserve">
+    <value>Round 8</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd8.Label" xml:space="preserve">
+    <value>Round 8</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd9.Content" xml:space="preserve">
+    <value>Round 9</value>
+  </data>
+  <data name="50_Scoreboards_cbRnd9.Label" xml:space="preserve">
+    <value>Round 9</value>
+  </data>
+  <data name="50_Scoreboards_cbRndFinal.Content" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="50_Scoreboards_cbRndFinal.Label" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="50_Scoreboards_cbRndSemi.Content" xml:space="preserve">
+    <value>Semi final</value>
+  </data>
+  <data name="50_Scoreboards_cbRndSemi.Label" xml:space="preserve">
+    <value>Semi final</value>
+  </data>
+  <data name="50_Scoreboards_cbWW1.Content" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Startlist Button WW1</comment>
+  </data>
+  <data name="50_Scoreboards_cbWW1.Label" xml:space="preserve">
+    <value>WW1</value>
+    <comment>Startlist Button WW1</comment>
+  </data>
+  <data name="50_Scoreboards_cbWW2.Content" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Startlist Button WW2</comment>
+  </data>
+  <data name="50_Scoreboards_cbWW2.Label" xml:space="preserve">
+    <value>WW2</value>
+    <comment>Startlist Button WW2</comment>
+  </data>
+  <data name="50_Scoreboards_EPA_Biplane.Content" xml:space="preserve">
+    <value>Biplane</value>
+  </data>
+  <data name="50_Scoreboards_EPA_Cuts.Header" xml:space="preserve">
+    <value>Cuts</value>
+  </data>
+  <data name="50_Scoreboards_EPA_DoubleEngine.Content" xml:space="preserve">
+    <value>Double engine</value>
+  </data>
+  <data name="50_Scoreboards_EPA_FlatFuselage.Content" xml:space="preserve">
+    <value>Flat fuselage</value>
+  </data>
+  <data name="50_Scoreboards_EPA_Flighttime.Header" xml:space="preserve">
+    <value>Flighttime</value>
+  </data>
+  <data name="50_Scoreboards_EPA_Flighttime.PlaceholderText" xml:space="preserve">
+    <value>_:__</value>
+  </data>
+  <data name="50_Scoreboards_EPA_ModellSum.Header" xml:space="preserve">
+    <value>Modellpoints</value>
+  </data>
+  <data name="50_Scoreboards_EPA_NonEngagement.Content" xml:space="preserve">
+    <value>Non engagement</value>
+  </data>
+  <data name="50_Scoreboards_EPA_SafetylineCross.Content" xml:space="preserve">
+    <value>Safetyline cross</value>
+  </data>
+  <data name="50_Scoreboards_EPA_StreamerOk.Content" xml:space="preserve">
+    <value>Streamer OK</value>
+  </data>
+  <data name="50_Scoreboards_EPA_Sum.Header" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="50_Scoreboards_Pilots.Text" xml:space="preserve">
+    <value>Pilots</value>
+  </data>
+  <data name="50_Scoreboards_WW1_BalsaStructure.Content" xml:space="preserve">
+    <value>Balsa structure</value>
+  </data>
+  <data name="50_Scoreboards_WW1_Biplane.Content" xml:space="preserve">
+    <value>Biplane</value>
+  </data>
+  <data name="50_Scoreboards_WW1_Cuts.Header" xml:space="preserve">
+    <value>Cuts</value>
+  </data>
+  <data name="50_Scoreboards_WW1_Flighttime.Header" xml:space="preserve">
+    <value>Flighttime</value>
+  </data>
+  <data name="50_Scoreboards_WW1_Flighttime.PlaceholderText" xml:space="preserve">
+    <value>_:__</value>
+  </data>
+  <data name="50_Scoreboards_WW1_GroundTargets.Header" xml:space="preserve">
+    <value>Ground targets</value>
+  </data>
+  <data name="50_Scoreboards_WW1_ModellSum.Header" xml:space="preserve">
+    <value>Modellpoints</value>
+  </data>
+  <data name="50_Scoreboards_WW1_Motor4Stroke.Content" xml:space="preserve">
+    <value>Motor 4 stroke</value>
+  </data>
+  <data name="50_Scoreboards_WW1_NonEngagement.Content" xml:space="preserve">
+    <value>Non engagement</value>
+  </data>
+  <data name="50_Scoreboards_WW1_SafetylineCross.Content" xml:space="preserve">
+    <value>Safetyline cross</value>
+  </data>
+  <data name="50_Scoreboards_WW1_ScaleLanding.Content" xml:space="preserve">
+    <value>Scale landing</value>
+  </data>
+  <data name="50_Scoreboards_WW1_ScaleStart.Content" xml:space="preserve">
+    <value>Scale start</value>
+  </data>
+  <data name="50_Scoreboards_WW1_StreamerOk.Content" xml:space="preserve">
+    <value>Streamer OK</value>
+  </data>
+  <data name="50_Scoreboards_WW1_Sum.Header" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="50_Scoreboards_WW1_WiresAndStruts.Content" xml:space="preserve">
+    <value>Wires and struts</value>
+  </data>
+  <data name="50_Scoreboards_WW2_Cuts.Header" xml:space="preserve">
+    <value>Cuts</value>
+  </data>
+  <data name="50_Scoreboards_WW2_Engine2,5ccm.Content" xml:space="preserve">
+    <value>Engine 2,5ccm</value>
+  </data>
+  <data name="50_Scoreboards_WW2_Flighttime.Header" xml:space="preserve">
+    <value>Flighttime</value>
+  </data>
+  <data name="50_Scoreboards_WW2_Flighttime.PlaceholderText" xml:space="preserve">
+    <value>_:__</value>
+  </data>
+  <data name="50_Scoreboards_WW2_NonEngagement.Content" xml:space="preserve">
+    <value>Non engagement</value>
+  </data>
+  <data name="50_Scoreboards_WW2_SafetylineCross.Content" xml:space="preserve">
+    <value>Safetyline cross</value>
+  </data>
+  <data name="50_Scoreboards_WW2_StreamerOk.Content" xml:space="preserve">
+    <value>Streamer OK</value>
+  </data>
+  <data name="50_Scoreboards_WW2_Sum.Header" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="90_Settings_Personalization.Text" xml:space="preserve">
+    <value>Personalization</value>
+    <comment>Personalization text for Settings</comment>
+  </data>
+  <data name="90_Settings_Textsize.Text" xml:space="preserve">
+    <value>Textsize</value>
+    <comment>Textsize title for Settings</comment>
+  </data>
+  <data name="90_Settings_Textsize_Link.Content" xml:space="preserve">
+    <value>To windows settings</value>
+    <comment>Textsize link for Settings</comment>
+  </data>
+  <data name="90_Settings_Theme.Text" xml:space="preserve">
+    <value>Choose theme</value>
+    <comment>Choose theme text for Settings</comment>
+  </data>
+  <data name="90_Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Dark</value>
+    <comment>Dark theme text for Settings</comment>
+  </data>
+  <data name="90_Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Windows default</value>
+    <comment>Windows default theme text for Settings</comment>
+  </data>
+  <data name="90_Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Light</value>
+    <comment>Light theme text for Settings</comment>
+  </data>
+  <data name="91_About.Text" xml:space="preserve">
+    <value>About this application</value>
+    <comment>About this application title for Settings</comment>
+  </data>
+  <data name="91_About_AboutDescription.Text" xml:space="preserve">
+    <value>The purpose of this program is to accelerate the evaluation of Aircombat competitions. We rely on a simple user interface that is based on the original scoreboard to enable easy and quick entry of the points.</value>
+    <comment>Application description</comment>
+  </data>
+  <data name="91_About_Changelog.Text" xml:space="preserve">
+    <value>Changelog</value>
+    <comment>Changlog title for Settings</comment>
+  </data>
+  <data name="91_About_Copyright.Text" xml:space="preserve">
+    <value>©2018-2021  Ing. Martin Herzele and Ing. Hubert Witschnig</value>
+    <comment>Application Copyright Information</comment>
+  </data>
+  <data name="91_About_Usedthirdparty.Text" xml:space="preserve">
+    <value>Third-party software</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>The purpose of this program is to accelerate the evaluation of Aircombat competitions. We rely on a simple user interface that is based on the original scoreboard to enable easy and quick entry of the points.</value>
+    <comment>Application description</comment>
+  </data>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>AirCombat Evaluation</value>
+    <comment>Application display name</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+    <comment>No</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+    <comment>Yes</comment>
+  </data>
+</root>

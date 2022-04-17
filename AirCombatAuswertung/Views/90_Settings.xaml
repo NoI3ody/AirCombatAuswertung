@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="AirCombatAuswertung.Views._90_Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AirCombatAuswertung.Views"
+    xmlns:helper="using:AirCombatAuswertung.Helpers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme"/>
+    </Page.Resources>
+    <ScrollViewer>
+        <Grid Margin="{StaticResource MediumLeftRightMargin}">
+            <StackPanel x:Name="ContentArea">
+                <TextBlock x:Uid="90_Settings_Personalization"
+                       Style="{ThemeResource SubtitleTextBlockStyle}" />
+                <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                    <TextBlock x:Uid="90_Settings_Theme"/>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}"
+                                x:Name="ThemePanel">
+                        <RadioButton x:Uid="90_Settings_Theme_Light"
+                            Checked="OnThemeRadioButtonChecked"
+                            FontSize="15"
+                            Tag="Light"/>
+                        <RadioButton 
+                            x:Uid="90_Settings_Theme_Dark"
+                            Checked="OnThemeRadioButtonChecked"
+                            FontSize="15"
+                            Tag="Dark"/>
+                        <RadioButton 
+                            x:Uid="90_Settings_Theme_Default"
+                            Checked="OnThemeRadioButtonChecked"
+                            FontSize="15"
+                            Tag="Default"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                    <TextBlock x:Uid="90_Settings_Textsize"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    <HyperlinkButton x:Uid="90_Settings_Textsize_Link"
+                                     Click="HyperlinkButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

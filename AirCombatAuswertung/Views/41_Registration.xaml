@@ -1,0 +1,214 @@
+﻿<Page
+    x:Class="AirCombatAuswertung.Views._41_Registration"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AirCombatAuswertung.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:extensions="using:CommunityToolkit.WinUI.UI"
+    xmlns:helpers="using:AirCombatAuswertung.Helpers"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <helpers:FloatToStringConverter x:Key="FloatToStringConverter"/>
+    </Page.Resources>
+    <ScrollViewer>
+        <StackPanel
+            Margin="{StaticResource MediumLeftRightMargin}">
+            <TextBlock x:Uid="41_Registration_Pilots"
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                       Margin="{StaticResource SmallTopBottomMargin}"/>
+            <RelativePanel>
+                <TextBox x:Uid="41_Registration_FirstName"
+                         x:Name="tbFirstName"
+                         RelativePanel.AlignTopWithPanel="True"
+                         RelativePanel.AlignLeftWithPanel="True"
+                         Width="200"
+                         Text="{x:Bind ViewModel.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         MaxLength="25"/>
+                <TextBox x:Uid="41_Registration_LastName"
+                         x:Name="tbLastName"
+                         RelativePanel.RightOf="tbFirstName"
+                         Width="200"
+                         Margin="{StaticResource SmallLeftMargin}"
+                         Text="{x:Bind ViewModel.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         MaxLength="25"/>
+                <TextBox x:Uid="41_Registration_Nation"
+                         x:Name="tbNation"
+                         RelativePanel.RightOf="tbLastName"
+                         Width="100"
+                         Margin="{StaticResource SmallLeftMargin}"
+                         Text="{x:Bind ViewModel.Nation,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         MaxLength="3"/>
+                <TextBox x:Uid="41_Registration_Channel"
+                         x:Name="tbChannel"
+                         extensions:TextBoxExtensions.ValidationMode="Dynamic"
+                         extensions:TextBoxExtensions.ValidationType="Decimal"
+                         RelativePanel.RightOf="tbNation"
+                         Width="100"
+                         Margin="{StaticResource SmallLeftMargin}"
+                         Text="{x:Bind ViewModel.Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         MaxLength="3"/>
+                <TextBlock x:Uid="41_Registration_Classes"
+                           x:Name="lClasses"
+                           RelativePanel.RightOf="tbChannel"
+                           Margin="{StaticResource SmallLeftMargin}"
+                           Visibility="{x:Bind ViewModel.LClasses, Mode=OneWay}"/>
+                <CheckBox x:Uid="41_Registration_cbWW2"
+                          x:Name="cbWW2"
+                          RelativePanel.Below="lClasses"
+                          RelativePanel.RightOf="tbChannel"
+                          Margin="{StaticResource SmallLeftMargin}"
+                          MinWidth="20"
+                          Visibility="{x:Bind ViewModel.CbWW2, Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.ClassWW2,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Uid="41_Registration_cbWW1"
+                          x:Name="cbWW1"
+                          RelativePanel.Below="lClasses"
+                          RelativePanel.RightOf="cbWW2"
+                          Margin="{StaticResource SmallLeftMargin}"
+                          MinWidth="20"
+                          Visibility="{x:Bind ViewModel.CbWW1, Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.ClassWW1,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Uid="41_Registration_cbEPA"
+                          x:Name="cbEPA"
+                          RelativePanel.Below="lClasses"
+                          RelativePanel.RightOf="cbWW1"
+                          Margin="{StaticResource SmallLeftMargin}"
+                          MinWidth="20"
+                          Visibility="{x:Bind ViewModel.CbEPA, Mode=OneWay}"
+                          IsChecked="{x:Bind ViewModel.ClassEPA,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock x:Uid="41_Registration_Pilotjudge"
+                           x:Name="lPilotjudge"
+                           RelativePanel.RightOf="cbEPA"
+                           Margin="{StaticResource SmallLeftMargin}"/>
+                <CheckBox RelativePanel.Below="lPilotjudge"
+                          RelativePanel.RightOf="cbEPA"
+                          Margin="{StaticResource SmallLeftMargin}"
+                          IsChecked="{x:Bind ViewModel.IsJudge,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                          Content="{x:Bind ViewModel.IsJudgeText,Mode=OneWay}"/>
+                <CommandBar RelativePanel.AlignRightWithPanel="True"
+                            HorizontalAlignment="Right">
+                    <AppBarButton x:Uid="41_Registration_bAddP"
+                                  Icon="AddFriend"
+                                  Command="{x:Bind ViewModel.AddPilotCommand}"/>
+                    <AppBarButton x:Uid="41_Registration_bDelP"
+                                  Icon="Delete"
+                                  Command="{x:Bind ViewModel.DelPilotCommand}"/>
+                </CommandBar>
+            </RelativePanel>
+            <controls:DataGrid Margin="{StaticResource SmallTopBottomMargin}"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{x:Bind ViewModel.Pilots, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               SelectedItem="{x:Bind ViewModel.SelectedPilot,Mode=TwoWay}">
+                <controls:DataGrid.Columns>
+                    <controls:DataGridTextColumn
+                            Binding="{Binding Startnr}"
+                            x:Uid="41_Registration_dgP_Startnr"
+                            IsReadOnly="True"/>
+                    <controls:DataGridTextColumn
+                            Binding="{Binding Firstname}"
+                            x:Uid="41_Registration_dgP_FirstName"/>
+                    <controls:DataGridTextColumn
+                            Binding="{Binding Lastname}"
+                            x:Uid="41_Registration_dgP_LastName"/>
+                    <controls:DataGridTextColumn
+                            Binding="{Binding Nation}"
+                            x:Uid="41_Registration_dgP_Nation"/>
+                    <controls:DataGridTemplateColumn
+                            x:Uid="41_Registration_dgP_Channel">
+                        <controls:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Padding="{StaticResource SmallLeftRightMargin}"
+                                    Text="{Binding Channel}"
+                                    VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </controls:DataGridTemplateColumn.CellTemplate>
+                        <controls:DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox
+                                    Text="{Binding Channel, Mode=TwoWay, Converter={StaticResource FloatToStringConverter}}"
+                                    VerticalAlignment="Center"
+                                    extensions:TextBoxExtensions.ValidationMode="Dynamic"
+                                    extensions:TextBoxExtensions.ValidationType="Decimal"
+                                    VerticalContentAlignment="Stretch"/>
+                            </DataTemplate>
+                        </controls:DataGridTemplateColumn.CellEditingTemplate>
+                    </controls:DataGridTemplateColumn>
+                    <controls:DataGridCheckBoxColumn
+                            Binding="{Binding FliesWW2}"
+                            x:Uid="41_Registration_dgP_FliesWW2"
+                            Visibility="{x:Bind ViewModel.CbWW2, Mode=OneWay}"/>
+                    <controls:DataGridCheckBoxColumn
+                            Binding="{Binding FliesWW1}"
+                            x:Uid="41_Registration_dgP_FliesWW1"
+                            Visibility="{x:Bind ViewModel.CbWW1, Mode=OneWay}"/>
+                    <controls:DataGridCheckBoxColumn
+                            Binding="{Binding FliesEPA}"
+                            x:Uid="41_Registration_dgP_FliesEPA"
+                            Visibility="{x:Bind ViewModel.CbEPA, Mode=OneWay}"/>
+                    <controls:DataGridCheckBoxColumn
+                            Binding="{Binding IsJudge}"
+                            x:Uid="41_Registration_dgP_IsJudge"/>
+                </controls:DataGrid.Columns>
+                <Interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="CellEditEnded">
+                        <core:InvokeCommandAction Command="{x:Bind ViewModel.UpdPilotCommand}"/>
+                    </core:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
+            </controls:DataGrid>
+            <TextBlock x:Uid="41_Registration_Judges"
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                       Margin="{StaticResource SmallTopBottomMargin}"/>
+            <RelativePanel>
+                <TextBox x:Uid="41_Registration_FirstNameJudge"
+                         x:Name="tbFirstNameJudge"
+                         RelativePanel.AlignTopWithPanel="True"
+                         RelativePanel.AlignLeftWithPanel="True"
+                         Width="200"
+                         MaxLength="25"
+                         IsEnabled="False"/>
+                <TextBox x:Uid="41_Registration_LastNameJudge"
+                         x:Name="tbLastNameJudge"
+                         RelativePanel.RightOf="tbFirstNameJudge"
+                         Width="200"
+                         Margin="{StaticResource SmallLeftMargin}"
+                         MaxLength="25"
+                         IsEnabled="False"/>
+                <CommandBar
+                    RelativePanel.AlignRightWithPanel="True"
+                    HorizontalAlignment="Right">
+                    <AppBarButton
+                       x:Uid="41_Registration_bAddJ"
+                       Icon="AddFriend"
+                        IsEnabled="False"/>
+                    <AppBarButton
+                        x:Uid="41_Registration_bDelJ"
+                        Icon="Delete"
+                        IsEnabled="False"/>
+                </CommandBar>
+            </RelativePanel>
+            <controls:DataGrid Margin="{StaticResource SmallTopBottomMargin}"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{x:Bind ViewModel.Judges, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                <controls:DataGrid.Columns>
+                    <controls:DataGridTextColumn
+                        Binding="{Binding Startnr}"
+                        Header="Judgenr"
+                        x:Uid="41_Registration_dgJ_Startnr"/>
+                    <controls:DataGridTextColumn
+                        Binding="{Binding Firstname}"
+                        Header="Vorname"
+                        x:Uid="41_Registration_dgJ_FirstName"/>
+                    <controls:DataGridTextColumn
+                        Binding="{Binding Lastname}"
+                        Header="Nachname"
+                        x:Uid="41_Registration_dgJ_LastName"/>
+                </controls:DataGrid.Columns>
+            </controls:DataGrid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,361 @@
+﻿<Page
+    x:Class="AirCombatAuswertung.Views._50_Scoreboards"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AirCombatAuswertung.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:extensions="using:CommunityToolkit.WinUI.UI">
+    <Page.Resources>
+        <DataTemplate x:Key="PilotListViewTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock
+                    Text="{Binding Startnr}"/>
+                <TextBlock x:Name="tbFirstname"
+                    Text="{Binding Firstname}"
+                    Margin="{StaticResource SmallLeftMargin}"/>
+                <TextBlock
+                    Text="{Binding Lastname}"
+                    Margin="{StaticResource XSmallLeftMargin}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Margin="{ThemeResource MediumLeftRightMargin}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="auto"/>
+            <ColumnDefinition
+                Width="auto"
+                MinWidth="0"/>
+            <ColumnDefinition
+                Width="auto"
+                MinWidth="0"/>
+            <ColumnDefinition
+                Width="auto"
+                MinWidth="0"/>
+            <ColumnDefinition
+                Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="*"/>
+        </Grid.RowDefinitions>
+        <!--Classes-->
+        <CommandBar
+            OverflowButtonVisibility="Auto"
+            DefaultLabelPosition="Collapsed"
+            HorizontalAlignment="Left"
+            x:Name="cbClasses"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="5">
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbWW2"
+                Visibility="{x:Bind ViewModel.CbWW2, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.WW2sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.WW2selen,Mode=OneWay}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbWW1"
+                Visibility="{x:Bind ViewModel.CbWW1, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.WW1sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.WW1selen,Mode=OneWay}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbEPA"
+                Visibility="{x:Bind ViewModel.CbEPA, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.EPAsel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.EPAselen,Mode=OneWay}"/>
+        <!--Classes-->
+        </CommandBar>
+        <!--Rounds-->
+        <CommandBar
+            OverflowButtonVisibility="Auto"
+            DefaultLabelPosition="Collapsed"
+            HorizontalAlignment="Left"
+            x:Name="cbRounds"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="5">
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd1"
+                Visibility="{x:Bind ViewModel.CbRnd1, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd1sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd1selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd1Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd2"
+                Visibility="{x:Bind ViewModel.CbRnd2, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd2sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd2selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd2Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd3"
+                Visibility="{x:Bind ViewModel.CbRnd3, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd3sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd3selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd3Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd4"
+                Visibility="{x:Bind ViewModel.CbRnd4, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd4sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd4selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd4Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd5"
+                Visibility="{x:Bind ViewModel.CbRnd5, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd5sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd5selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd5Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd6"
+                Visibility="{x:Bind ViewModel.CbRnd6, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd6sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd6selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd6Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd7"
+                Visibility="{x:Bind ViewModel.CbRnd7, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd7sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd7selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd7Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd8"
+                Visibility="{x:Bind ViewModel.CbRnd8, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd8sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd8selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd8Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd9"
+                Visibility="{x:Bind ViewModel.CbRnd9, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd9sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd9selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd9Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd10"
+                Visibility="{x:Bind ViewModel.CbRnd10, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd10sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd10selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd10Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRndSemi"
+                Visibility="{x:Bind ViewModel.CbRndSemi, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRndSemisel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRndSemiselen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.RndSCommand}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRndFinal"
+                Visibility="{x:Bind ViewModel.CbRndFinal, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRndFinalsel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRndFinalselen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.RndFCommand}"/>
+        </CommandBar> 
+        <!--Pilots-->
+        <TextBlock 
+            x:Uid="50_Scoreboards_Pilots"
+            Style="{StaticResource SubtitleTextBlockStyle}"
+            Margin="{StaticResource SmallTopBottomMargin}"
+            Grid.Row="2"
+            Visibility="{x:Bind ViewModel.VPilots, Mode=OneWay}"/>
+        <ListView
+            Grid.Row="3"
+            SelectionMode="Single"
+            HorizontalAlignment="Left"
+            ItemsSource="{x:Bind ViewModel.Pilots}"
+            ItemTemplate="{StaticResource PilotListViewTemplate}"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Visibility="{x:Bind ViewModel.VPilots, Mode=OneWay}"
+            SelectedItem="{x:Bind ViewModel.SelPilot, Mode=TwoWay}"
+            Margin="{StaticResource MediumRightMargin}">
+        </ListView>
+        <!--Scores-->
+        <TextBlock
+            Text="Scores"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            Grid.Row="2"
+            Style="{StaticResource SubtitleTextBlockStyle}"
+            Margin="{StaticResource SmallTopBottomMargin}"
+            HorizontalAlignment="Left"
+            Visibility="{x:Bind ViewModel.VScores, Mode=OneWay}"/>
+        <!--WW2-->
+        <ScrollViewer
+            Grid.Column="1"
+            Grid.Row="3"
+            Visibility="{x:Bind ViewModel.SvWW2, Mode=OneWay}">
+            <StackPanel 
+                MinWidth="200"
+                Margin="{StaticResource SmallRightMargin}">
+                <TextBox
+                    extensions:TextBoxExtensions.CustomMask="0:[0-7],1:[0-5],2:[0-9]"
+                    extensions:TextBoxExtensions.Mask="0:12"
+                    x:Uid="50_Scoreboards_WW2_Flighttime"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    Text="{x:Bind ViewModel.WW2Flighttime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <NumberBox
+                    x:Uid="50_Scoreboards_WW2_Cuts"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    Value="{x:Bind ViewModel.WW2Cuts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox 
+                    x:Uid="50_Scoreboards_WW2_StreamerOk"
+                    IsChecked="{x:Bind ViewModel.WW2StreamerOK, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox 
+                    x:Uid="50_Scoreboards_WW2_SafetylineCross"
+                    IsChecked="{x:Bind ViewModel.WW2SafetyCross, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox 
+                    x:Uid="50_Scoreboards_WW2_NonEngagement"
+                    IsChecked="{x:Bind ViewModel.WW2NonEng, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox 
+                    x:Uid="50_Scoreboards_WW2_Engine2,5ccm"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    IsChecked="{x:Bind ViewModel.WW22_5ccm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <NumberBox
+                    x:Uid="50_Scoreboards_WW2_Sum"
+                    IsEnabled="False"
+                    Value="{x:Bind ViewModel.WW2Sum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </ScrollViewer>
+        <!--WW1-->
+        <ScrollViewer
+            Grid.Column="2"
+            Grid.Row="3"
+            Visibility="{x:Bind ViewModel.SvWW1, Mode=OneWay}">
+            <StackPanel
+                MinWidth="200"
+                Margin="{StaticResource SmallRightMargin}">
+                    <CheckBox 
+                        x:Uid="50_Scoreboards_WW1_Motor4Stroke"
+                        IsChecked="{x:Bind ViewModel.WW1Motor4Stroke, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox
+                        x:Uid="50_Scoreboards_WW1_Biplane"
+                        IsChecked="{x:Bind ViewModel.WW1Biplane, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox 
+                        x:Uid="50_Scoreboards_WW1_BalsaStructure"
+                        IsChecked="{x:Bind ViewModel.WW1BalsaStructure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox 
+                        x:Uid="50_Scoreboards_WW1_WiresAndStruts"
+                        Margin="{StaticResource SmallBottomMargin}"
+                        IsChecked="{x:Bind ViewModel.WW1WiresAndStruts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <TextBox
+                        extensions:TextBoxExtensions.CustomMask="0:[0-7],1:[0-5],2:[0-9]"
+                        extensions:TextBoxExtensions.Mask="0:12"
+                        x:Uid="50_Scoreboards_WW1_Flighttime"
+                        Margin="{StaticResource SmallBottomMargin}"
+                        Text="{x:Bind ViewModel.WW1Flighttime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <NumberBox                
+                        x:Uid="50_Scoreboards_WW1_Cuts"
+                        Margin="{StaticResource SmallBottomMargin}"
+                        Value="{x:Bind ViewModel.WW1Cuts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <NumberBox                
+                        x:Uid="50_Scoreboards_WW1_GroundTargets"
+                        Margin="{StaticResource SmallBottomMargin}"
+                        Value="{x:Bind ViewModel.WW1GroundTargets, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                       
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox
+                        x:Uid="50_Scoreboards_WW1_StreamerOk"
+                        IsChecked="{x:Bind ViewModel.WW1StreamerOK, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox
+                        x:Uid="50_Scoreboards_WW1_ScaleStart"
+                        IsChecked="{x:Bind ViewModel.WW1ScaleStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox
+                        x:Uid="50_Scoreboards_WW1_ScaleLanding"
+                        IsChecked="{x:Bind ViewModel.WW1ScaleLand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox
+                        x:Uid="50_Scoreboards_WW1_NonEngagement"
+                        IsChecked="{x:Bind ViewModel.WW1NonEng, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <CheckBox
+                        x:Uid="50_Scoreboards_WW1_SafetylineCross"
+                        Margin="{StaticResource SmallBottomMargin}"
+                        IsChecked="{x:Bind ViewModel.WW1SafetyCross, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                    <NumberBox                
+                        x:Uid="50_Scoreboards_WW1_ModellSum"
+                        Margin="{StaticResource SmallBottomMargin}"
+                        IsEnabled="False"
+                        Value="{x:Bind ViewModel.WW1SumModP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <NumberBox                
+                        x:Uid="50_Scoreboards_WW1_Sum"
+                        IsEnabled="False"
+                        Value="{x:Bind ViewModel.WW1Sum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </ScrollViewer>
+        <!--EPA-->
+        <ScrollViewer
+            Grid.Column="3"
+            Grid.Row="3"
+            Visibility="{x:Bind ViewModel.SvEPA, Mode=OneWay}">
+            <StackPanel                
+                MinWidth="200"
+                Margin="{StaticResource SmallRightMargin}">
+                <TextBox
+                    extensions:TextBoxExtensions.CustomMask="0:[0-7],1:[0-5],2:[0-9]"
+                    extensions:TextBoxExtensions.Mask="0:12"
+                    x:Uid="50_Scoreboards_EPA_Flighttime"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    Text="{x:Bind ViewModel.EPAFlighttime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <NumberBox                
+                    x:Uid="50_Scoreboards_EPA_Cuts"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    Value="{x:Bind ViewModel.EPACuts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox
+                    x:Uid="50_Scoreboards_EPA_StreamerOk"
+                    IsChecked="{x:Bind ViewModel.EPAStreamerOK, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox
+                    x:Uid="50_Scoreboards_EPA_NonEngagement"
+                    IsChecked="{x:Bind ViewModel.EPANonEng, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox
+                    x:Uid="50_Scoreboards_EPA_SafetylineCross"
+                    IsChecked="{x:Bind ViewModel.EPASafetyCross, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox
+                    x:Uid="50_Scoreboards_EPA_DoubleEngine"
+                    IsChecked="{x:Bind ViewModel.EPADoubleEngine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox
+                    x:Uid="50_Scoreboards_EPA_Biplane"
+                    IsChecked="{x:Bind ViewModel.EPABiplane, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <CheckBox
+                    x:Uid="50_Scoreboards_EPA_FlatFuselage"
+                    IsChecked="{x:Bind ViewModel.EPAFlatFuselage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    IsEnabled="{x:Bind ViewModel.EnableEntry, Mode=OneWay}"/>
+                <NumberBox                
+                    x:Uid="50_Scoreboards_EPA_ModellSum"
+                    Margin="{StaticResource SmallBottomMargin}"
+                    IsEnabled="False"
+                    Value="{x:Bind ViewModel.EPASumModP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <NumberBox                
+                    x:Uid="50_Scoreboards_EPA_Sum"
+                    IsEnabled="False"
+                    Value="{x:Bind ViewModel.EPASum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
