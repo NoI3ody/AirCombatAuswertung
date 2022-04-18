@@ -106,6 +106,7 @@ namespace AirCombatAuswertung
             services.AddTransient<_41_RegistrationViewModel>();
             services.AddTransient<_42_StartlistViewModel>();
             services.AddTransient<_50_ScoreboardsViewModel>();
+            services.AddTransient<_60_ResultsViewModel>();
 
             services.AddSingleton<IDataService, SqliteDataService>();
             services.AddSingleton<IPrintService, PrintService>();

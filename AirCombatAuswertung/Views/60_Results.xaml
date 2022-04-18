@@ -22,11 +22,20 @@
             Grid.Column="0"
             Grid.ColumnSpan="5">
             <AppBarToggleButton
-                x:Uid="60_Results_cbWW2"/>
+                x:Uid="60_Results_cbWW2"
+                Visibility="{x:Bind ViewModel.CbWW2, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.WW2sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.WW2selen,Mode=OneWay}"/>
             <AppBarToggleButton
-                x:Uid="60_Results_cbWW1"/>
+                x:Uid="60_Results_cbWW1"
+                Visibility="{x:Bind ViewModel.CbWW1, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.WW1sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.WW1selen,Mode=OneWay}"/>
             <AppBarToggleButton
-                x:Uid="60_Results_cbEPA"/>
+                x:Uid="60_Results_cbEPA"
+                Visibility="{x:Bind ViewModel.CbEPA, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.EPAsel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.EPAselen,Mode=OneWay}"/>
         </CommandBar>
     </Grid>
 </Page>
