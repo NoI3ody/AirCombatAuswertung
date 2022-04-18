@@ -39,6 +39,8 @@ namespace AirCombatAuswertung.Services
                 await CreateScoresTableAsync(db);
 
                 await CreateResultsTableAsync(db);
+
+                await CreateResultsShowTableAsync(db);
             }
 
         }
@@ -306,6 +308,27 @@ namespace AirCombatAuswertung.Services
                                                                         Sum INTEGER,
                                                                         Total INTEGER,
                                                                         PRIMARY KEY(Startnr, Classnr, Round))";
+            var createTable = new SqliteCommand(tableCommand, db);
+            await createTable.ExecuteNonQueryAsync();
+        }
+        private async Task CreateResultsShowTableAsync(SqliteConnection db)
+        {
+            string tableCommand = @"CREATE TABLE IF NOT EXISTS ResultsShow (Startnr INTEGER NOT NULL,
+                                                                            Classnr INTEGER NOT NULL,
+                                                                            Round1 INTEGER,
+                                                                            Round2 INTEGER,
+                                                                            Round3 INTEGER,
+                                                                            Round4 INTEGER,
+                                                                            Round5 INTEGER,
+                                                                            Round6 INTEGER,
+                                                                            Round7 INTEGER,
+                                                                            Round8 INTEGER,
+                                                                            Round9 INTEGER,
+                                                                            Round10 INTEGER,
+                                                                            Round11 INTEGER,
+                                                                            Round12 INTEGER,
+                                                                            Total INTEGER,
+                                                                            PRIMARY KEY(Startnr, Classnr))";
             var createTable = new SqliteCommand(tableCommand, db);
             await createTable.ExecuteNonQueryAsync();
         }
