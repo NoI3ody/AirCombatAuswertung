@@ -699,7 +699,7 @@ namespace AirCombatAuswertung.ViewModels
             if (_startlist.Count > 0)
             {
                 // Enable to print
-                //PrintEnable = true;
+                PrintEnable = true;
             }
             else
             {
