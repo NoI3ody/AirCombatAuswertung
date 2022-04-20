@@ -217,6 +217,15 @@ namespace AirCombatAuswertung.Services
                 return await AddResultAsync(db, c, round, p);
             }
         }
+        public async Task<IList<Result>> GetAllResultsforClass(Class c)
+        {
+            IList<Result> results;
+            using (var db = await GetOpenConnectionAsync())
+            {
+                results = await GetAllResultsforClass(db, c);
+            }
+            return results;
+        }
         public async Task UpdateResultAsync(Result r)
         {
             using (var db = await GetOpenConnectionAsync())
@@ -623,6 +632,13 @@ namespace AirCombatAuswertung.Services
             var scores = await db.QueryAsync<Score>(@"SELECT * FROM Scores WHERE Startnr = @Startnr AND Classnr = @Classnr AND Round = @Round", s);
             return scores.ToList();
         }
+        private async Task<IList<Result>> GetAllResultsforClass(SqliteConnection db,Class c)
+        {
+            var r = new Result();
+            r.Classnr = c.Nr;
+            var results = await db.QueryAsync<Result>(@"SELECT * FROM Results WHERE Classnr = @Classnr", r);
+            return results.ToList();
+        }
 
         private async Task PopulateClassesAsync(SqliteConnection db)
         {
@@ -1013,6 +1029,14 @@ namespace AirCombatAuswertung.Services
                 }
             }
             await UpdateResultAsync(r);
+        }
+        private async Task CalcResultlist(Class c)
+        {
+            IList<Result> results = await GetAllResultsforClass(c);
+            foreach (Result result in results)
+            {
+
+            }
         }
         #endregion
     }

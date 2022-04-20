@@ -10,7 +10,11 @@
     <Grid Margin="{ThemeResource MediumLeftRightMargin}">
         <Grid.ColumnDefinitions>            
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>            
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
         </Grid.RowDefinitions>
         <!--Classes-->
         <CommandBar
@@ -18,9 +22,7 @@
             DefaultLabelPosition="Collapsed"
             HorizontalAlignment="Left"
             x:Name="cbClasses"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="5">
+            Grid.Row="0">
             <AppBarToggleButton
                 x:Uid="60_Results_cbWW2"
                 Visibility="{x:Bind ViewModel.CbWW2, Mode=OneWay}"
@@ -36,6 +38,86 @@
                 Visibility="{x:Bind ViewModel.CbEPA, Mode=OneWay}"
                 IsChecked="{x:Bind ViewModel.EPAsel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 IsEnabled="{x:Bind ViewModel.EPAselen,Mode=OneWay}"/>
+        </CommandBar>
+        <!--Rounds-->
+        <CommandBar
+            OverflowButtonVisibility="Auto"
+            DefaultLabelPosition="Collapsed"
+            HorizontalAlignment="Left"
+            x:Name="cbRounds"
+            Grid.Row="1">
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd1"
+                Visibility="{x:Bind ViewModel.CbRnd1, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd1sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd1selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd1Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd2"
+                Visibility="{x:Bind ViewModel.CbRnd2, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd2sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd2selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd2Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd3"
+                Visibility="{x:Bind ViewModel.CbRnd3, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd3sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd3selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd3Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd4"
+                Visibility="{x:Bind ViewModel.CbRnd4, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd4sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd4selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd4Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd5"
+                Visibility="{x:Bind ViewModel.CbRnd5, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd5sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd5selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd5Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd6"
+                Visibility="{x:Bind ViewModel.CbRnd6, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd6sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd6selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd6Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd7"
+                Visibility="{x:Bind ViewModel.CbRnd7, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd7sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd7selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd7Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd8"
+                Visibility="{x:Bind ViewModel.CbRnd8, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd8sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd8selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd8Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd9"
+                Visibility="{x:Bind ViewModel.CbRnd9, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd9sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd9selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd9Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRnd10"
+                Visibility="{x:Bind ViewModel.CbRnd10, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRnd10sel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRnd10selen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.Rnd10Command}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRndSemi"
+                Visibility="{x:Bind ViewModel.CbRndSemi, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRndSemisel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRndSemiselen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.RndSCommand}"/>
+            <AppBarToggleButton
+                x:Uid="50_Scoreboards_cbRndFinal"
+                Visibility="{x:Bind ViewModel.CbRndFinal, Mode=OneWay}"
+                IsChecked="{x:Bind ViewModel.CbRndFinalsel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                IsEnabled="{x:Bind ViewModel.CbRndFinalselen,Mode=OneWay}"
+                Command="{x:Bind ViewModel.RndFCommand}"/>
         </CommandBar>
     </Grid>
 </Page>
