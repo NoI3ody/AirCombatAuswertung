@@ -632,7 +632,7 @@ namespace AirCombatAuswertung.Services
             var scores = await db.QueryAsync<Score>(@"SELECT * FROM Scores WHERE Startnr = @Startnr AND Classnr = @Classnr AND Round = @Round", s);
             return scores.ToList();
         }
-        private async Task<IList<Result>> GetAllResultsforClass(SqliteConnection db,Class c)
+        private async Task<IList<Result>> GetAllResultsforClass(SqliteConnection db, Class c)
         {
             var r = new Result();
             r.Classnr = c.Nr;
@@ -971,14 +971,14 @@ namespace AirCombatAuswertung.Services
             //Wenn noch nicht alle Klassen angelegt wurden berechnung verzögern!
             if (r.Classnr == 1 && scores.Count != 6) return;
             else if (r.Classnr == 2 && scores.Count != 12) return;
-            else if(r.Classnr == 3 && scores.Count != 8) return;
+            else if (r.Classnr == 3 && scores.Count != 8) return;
 
             foreach (var score in scores)
-            {                
+            {
                 // Wenn Flugzeit = 0, keine Punkte vergeben, außer Safetyline!.
                 if (score.Category == "Time" && score.Value == 0)
                 {
-                    if(scores.Where(s => s.Category == "Safetyline Cross").FirstOrDefault().Value != 0)
+                    if (scores.Where(s => s.Category == "Safetyline Cross").FirstOrDefault().Value != 0)
                     {
                         r.Sum = (int)_rules.Where(sl => sl.Name == "Safetyline Cross").FirstOrDefault().Value;
                         break;
@@ -1007,12 +1007,12 @@ namespace AirCombatAuswertung.Services
                     }
                 }
                 //Modellpunkte berechnen WW1
-                if(score.Category == "WW1 Four-Stroke" || score.Category == "WW1 Biplane" || score.Category == "WW1 WingStructure" || score.Category == "WW1 Wires and Struts")
+                if (score.Category == "WW1 Four-Stroke" || score.Category == "WW1 Biplane" || score.Category == "WW1 WingStructure" || score.Category == "WW1 Wires and Struts")
                 {
                     r.SumModP += zwischenSumme;
                 }
                 //Modellpunkte berechnen EPA
-                if(score.Category == "EPA Double Engine" || score.Category == "EPA Biplane" || score.Category == "EPA Flat Fuselage")
+                if (score.Category == "EPA Double Engine" || score.Category == "EPA Biplane" || score.Category == "EPA Flat Fuselage")
                 {
                     r.SumModP += zwischenSumme;
                 }
@@ -1021,22 +1021,43 @@ namespace AirCombatAuswertung.Services
             //Limitiere Modellpunkte in WW1
             if (r.Classnr == 2)
             {
-                if(r.SumModP > _rules.Where(r => r.Name == "WW1 max. Modelpoints").FirstOrDefault().Value)
+                if (r.SumModP > _rules.Where(r => r.Name == "WW1 max. Modelpoints").FirstOrDefault().Value)
                 {
                     int diff = (int)_rules.Where(r => r.Name == "WW1 max. Modelpoints").FirstOrDefault().Value - r.SumModP;
                     r.SumModP = (int)_rules.Where(r => r.Name == "WW1 max. Modelpoints").FirstOrDefault().Value;
                     r.Sum -= Math.Abs(diff);
                 }
             }
-            await UpdateResultAsync(r);
-        }
-        private async Task CalcResultlist(Class c)
-        {
-            IList<Result> results = await GetAllResultsforClass(c);
-            foreach (Result result in results)
+            if (r.Round == 1)
             {
-
+                r.Total = r.Sum;
             }
+            else if (r.Round > 1 && r.Round <= 10)
+            {
+                Class c = new Class { Nr = r.Classnr };
+                Pilot p = new Pilot { Startnr = r.Startnr };
+                var r2 = await GetResultAsync(c, r.Round - 1, p);
+                r.Total = r.Sum + r2.Total;
+            }
+            else if (r.Round > 10)
+            {
+                Class c = new Class { Nr = r.Classnr };
+                Pilot p = new Pilot { Startnr = r.Startnr };
+
+                //Hole die max. Runde
+                var round = await GetOptionByNameAsync("AnzRnd" + c.Nr);
+                if (r.Round == 12 && bool.Parse(GetOptionByNameAsync("Semi" + c.Nr).Result.Value))
+                {
+                    var r3 = await GetResultAsync(c, 11, p);
+                    r.Total = r.Sum + r3.Total;
+                }
+                else
+                {
+                    var r4 = await GetResultAsync(c, int.Parse(round.Value), p);
+                    r.Total = r.Sum + r4.Total;
+                }                
+            }
+            await UpdateResultAsync(r);
         }
         #endregion
     }
