@@ -1,5 +1,6 @@
 ﻿using AirCombatAuswertung.Interfaces;
 using AirCombatAuswertung.Model;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -7,6 +8,7 @@ namespace AirCombatAuswertung.ViewModels
 {
     public class _60_ResultsViewModel : BindableBase
     {
+        private ObservableCollection<ResultShow> _results = new ObservableCollection<ResultShow>();
         public _60_ResultsViewModel(IDataService dataService)
         {
             _dataService = dataService;
@@ -723,6 +725,17 @@ namespace AirCombatAuswertung.ViewModels
             CbRnd10sel = false;
             CbRndSemisel = false;
             CbRndFinalsel = false;
+        }
+        public ObservableCollection<ResultShow> Results
+        {
+            get
+            {
+                return _results;
+            }
+            set
+            {
+                SetProperty(ref _results, value);
+            }
         }
         #region Commands
         public ICommand Rnd1Command { get; set; }

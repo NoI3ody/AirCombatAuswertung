@@ -8,7 +8,19 @@ namespace AirCombatAuswertung.Model
         /// <summary>
         /// Startnr des Piloten
         /// </summary>
-        public decimal Startnr { get; set; }
+        public decimal Startnr { get; set; }        
+        /// <summary>
+        /// Pilot Vorname
+        /// </summary>
+        public string Firstname { get; set; }
+        /// <summary>
+        /// Pilot Nachname
+        /// </summary>
+        public string Lastname { get; set; }
+        /// <summary>
+        /// Pilot Nation
+        /// </summary>
+        public string Nation { get; set; }
         [Key]
         /// <summary>
         /// Laufende Nummer für die drei verfügbaren Klassen,

@@ -723,6 +723,54 @@
     <value>WW2</value>
     <comment>Startlist Button WW2</comment>
   </data>
+  <data name="60_Results_dgR_Firstname.Header" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="60_Results_dgR_Lastname.Header" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="60_Results_dgR_Nation.Header" xml:space="preserve">
+    <value>Nation</value>
+  </data>
+  <data name="60_Results_dgR_Round1.Header" xml:space="preserve">
+    <value>Runde 1</value>
+  </data>
+  <data name="60_Results_dgR_Round10.Header" xml:space="preserve">
+    <value>Runde 10</value>
+  </data>
+  <data name="60_Results_dgR_Round11.Header" xml:space="preserve">
+    <value>Runde 11</value>
+  </data>
+  <data name="60_Results_dgR_Round12.Header" xml:space="preserve">
+    <value>Runde 12</value>
+  </data>
+  <data name="60_Results_dgR_Round2.Header" xml:space="preserve">
+    <value>Runde 2</value>
+  </data>
+  <data name="60_Results_dgR_Round3.Header" xml:space="preserve">
+    <value>Runde 3</value>
+  </data>
+  <data name="60_Results_dgR_Round4.Header" xml:space="preserve">
+    <value>Runde 4</value>
+  </data>
+  <data name="60_Results_dgR_Round5.Header" xml:space="preserve">
+    <value>Runde 5</value>
+  </data>
+  <data name="60_Results_dgR_Round6.Header" xml:space="preserve">
+    <value>Runde 6</value>
+  </data>
+  <data name="60_Results_dgR_Round7.Header" xml:space="preserve">
+    <value>Runde 7</value>
+  </data>
+  <data name="60_Results_dgR_Round8.Header" xml:space="preserve">
+    <value>Runde 8</value>
+  </data>
+  <data name="60_Results_dgR_Round9.Header" xml:space="preserve">
+    <value>Runde 9</value>
+  </data>
+  <data name="60_Results_dgR_Total.Header" xml:space="preserve">
+    <value>Gesamt</value>
+  </data>
   <data name="90_Settings_Personalization.Text" xml:space="preserve">
     <value>Personalisierung</value>
     <comment>Personalization text for Settings</comment>

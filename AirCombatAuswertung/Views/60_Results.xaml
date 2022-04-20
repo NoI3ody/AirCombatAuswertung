@@ -5,6 +5,7 @@
     xmlns:local="using:AirCombatAuswertung.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
     mc:Ignorable="d">
 
     <Grid Margin="{ThemeResource MediumLeftRightMargin}">
@@ -15,6 +16,8 @@
                 Height="auto"/>
             <RowDefinition
                 Height="auto"/>
+            <RowDefinition
+                Height="*"/>
         </Grid.RowDefinitions>
         <!--Classes-->
         <CommandBar
@@ -119,5 +122,77 @@
                 IsEnabled="{x:Bind ViewModel.CbRndFinalselen,Mode=OneWay}"
                 Command="{x:Bind ViewModel.RndFCommand}"/>
         </CommandBar>
+        <controls:DataGrid
+            Margin="{StaticResource SmallTopBottomMargin}"
+            AutoGenerateColumns="False"
+            ItemsSource="{x:Bind ViewModel.Results, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Grid.Row="2">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Firstname}"
+                    x:Uid="60_Results_dgR_Firstname"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Lastname}"
+                    x:Uid="60_Results_dgR_Lastname"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Nation}"
+                    x:Uid="60_Results_dgR_Nation"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round1}"
+                    x:Uid="60_Results_dgR_Round1"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round2}"
+                    x:Uid="60_Results_dgR_Round2"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round3}"
+                    x:Uid="60_Results_dgR_Round3"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round4}"
+                    x:Uid="60_Results_dgR_Round4"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round5}"
+                    x:Uid="60_Results_dgR_Round5"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round6}"
+                    x:Uid="60_Results_dgR_Round6"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round7}"
+                    x:Uid="60_Results_dgR_Round7"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round8}"
+                    x:Uid="60_Results_dgR_Round8"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round9}"
+                    x:Uid="60_Results_dgR_Round9"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round10}"
+                    x:Uid="60_Results_dgR_Round10"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round11}"
+                    x:Uid="60_Results_dgR_Round11"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Round12}"
+                    x:Uid="60_Results_dgR_Round12"
+                    IsReadOnly="True"/>
+                <controls:DataGridTextColumn
+                    Binding="{Binding Total}"
+                    x:Uid="60_Results_dgR_Total"
+                    IsReadOnly="True"/>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
     </Grid>
 </Page>
