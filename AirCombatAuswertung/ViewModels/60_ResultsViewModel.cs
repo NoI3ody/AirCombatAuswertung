@@ -1,6 +1,8 @@
 ﻿using AirCombatAuswertung.Interfaces;
 using AirCombatAuswertung.Model;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -45,6 +47,7 @@ namespace AirCombatAuswertung.ViewModels
             {
                 if (!SetProperty(ref _SelRound, value, nameof(SelRound)))
                     return;
+                CalculateResults(SelClass, SelRound);
             }
         }
         #region Commandbar Classes
@@ -603,6 +606,128 @@ namespace AirCombatAuswertung.ViewModels
         }
         #endregion
         #endregion
+        #region Visibility
+        private Microsoft.UI.Xaml.Visibility _vRnd1 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd1
+        {
+            get => _vRnd1;
+            set
+            {
+                if (!SetProperty(ref _vRnd1, value, nameof(vRnd1)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd2 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd2
+        {
+            get => _vRnd2;
+            set
+            {
+                if (!SetProperty(ref _vRnd2, value, nameof(vRnd2)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd3 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd3
+        {
+            get => _vRnd3;
+            set
+            {
+                if (!SetProperty(ref _vRnd3, value, nameof(vRnd3)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd4 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd4
+        {
+            get => _vRnd4;
+            set
+            {
+                if (!SetProperty(ref _vRnd4, value, nameof(vRnd4)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd5 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd5
+        {
+            get => _vRnd5;
+            set
+            {
+                if (!SetProperty(ref _vRnd5, value, nameof(vRnd5)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd6 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd6
+        {
+            get => _vRnd6;
+            set
+            {
+                if (!SetProperty(ref _vRnd6, value, nameof(vRnd6)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd7 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd7
+        {
+            get => _vRnd7;
+            set
+            {
+                if (!SetProperty(ref _vRnd7, value, nameof(vRnd7)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd8 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd8
+        {
+            get => _vRnd8;
+            set
+            {
+                if (!SetProperty(ref _vRnd8, value, nameof(vRnd8)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd9 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd9
+        {
+            get => _vRnd9;
+            set
+            {
+                if (!SetProperty(ref _vRnd9, value, nameof(vRnd9)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd10 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd10
+        {
+            get => _vRnd10;
+            set
+            {
+                if (!SetProperty(ref _vRnd10, value, nameof(vRnd10)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd11 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd11
+        {
+            get => _vRnd11;
+            set
+            {
+                if (!SetProperty(ref _vRnd11, value, nameof(vRnd11)))
+                    return;
+            }
+        }
+        private Microsoft.UI.Xaml.Visibility _vRnd12 = Microsoft.UI.Xaml.Visibility.Collapsed;
+        public Microsoft.UI.Xaml.Visibility vRnd12
+        {
+            get => _vRnd12;
+            set
+            {
+                if (!SetProperty(ref _vRnd12, value, nameof(vRnd12)))
+                    return;
+            }
+        }
+        #endregion
         public async Task InitializeResultsDataAsync()
         {
             //Classes visibility
@@ -728,14 +853,97 @@ namespace AirCombatAuswertung.ViewModels
         }
         public ObservableCollection<ResultShow> Results
         {
-            get
-            {
-                return _results;
-            }
+            get => _results;
             set
             {
-                SetProperty(ref _results, value);
+                if (!SetProperty(ref _results, value, nameof(Results)))
+                    return;
             }
+        }
+        private async Task CalculateResults(Class c, int r)
+        {
+            //Visibility
+            vRnd1 = vRnd2 = vRnd3 = vRnd4 = vRnd5 = vRnd6 = vRnd7 = vRnd8 = vRnd9 = vRnd10 = vRnd11 = vRnd12 = Microsoft.UI.Xaml.Visibility.Collapsed;
+            var newResultlist = new ObservableCollection<ResultShow>();
+            var results = await _dataService.GetAllResultsforClass(c);
+            foreach (var result in results)
+            {
+                ResultShow newRow = new ResultShow();
+                newRow.Startnr = result.Startnr;
+                Pilot p = await _dataService.GetPilotAsync(decimal.ToInt32(result.Startnr));
+                newRow.Firstname = p.Firstname;
+                newRow.Lastname = p.Lastname;
+                newRow.Nation = p.Nation;                
+                if (newResultlist.FirstOrDefault(r => r.Startnr == newRow.Startnr) != null)
+                {
+                    ///Do nothing
+                }
+                else
+                {
+                    newResultlist.Add(newRow);
+                }
+                foreach (var row in newResultlist)
+                {
+                    if (result.Round > r) break;
+                    switch (result.Round)
+                    {
+                        case 1:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round1 = result.Sum;
+                            vRnd1 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 2:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round2 = result.Sum;
+                            vRnd2 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 3:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round3 = result.Sum;
+                            vRnd3 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 4:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round4 = result.Sum;
+                            vRnd4 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 5:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round5 = result.Sum;
+                            vRnd5 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 6:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round6 = result.Sum;
+                            vRnd6 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 7:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round7 = result.Sum;
+                            vRnd7 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 8:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round8 = result.Sum;
+                            vRnd8 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 9:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round1 = result.Sum;
+                            vRnd9 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 10:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round10 = result.Sum;
+                            vRnd10 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 11:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round11 = result.Sum;
+                            vRnd11 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                        case 12:
+                            newResultlist.First(r => r.Startnr == newRow.Startnr).Round12 = result.Sum;
+                            vRnd12 = Microsoft.UI.Xaml.Visibility.Visible;
+                            break;
+                    }                    
+                }
+            }
+            Results.Clear();
+            foreach (var item in newResultlist)
+            {                
+                Results.Add(item);
+            }
+            
         }
         #region Commands
         public ICommand Rnd1Command { get; set; }

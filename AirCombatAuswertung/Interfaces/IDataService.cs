@@ -28,5 +28,6 @@ namespace AirCombatAuswertung.Interfaces
         Task<Task> UpdateScoreAsync(Class c, int round, Pilot p, string category,int value);
         Task<IList<Score>> GetScoresforClassRoundPilot(int c, int round, int p);
         Task<Result> GetResultAsync(Class c,int round, Pilot p);
+        Task<IList<Result>> GetAllResultsforClass(Class c);
     }
 }

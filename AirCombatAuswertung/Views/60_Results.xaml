@@ -143,51 +143,63 @@
                 <controls:DataGridTextColumn
                     Binding="{Binding Round1}"
                     x:Uid="60_Results_dgR_Round1"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd1, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round2}"
                     x:Uid="60_Results_dgR_Round2"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd2, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round3}"
                     x:Uid="60_Results_dgR_Round3"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd3, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round4}"
                     x:Uid="60_Results_dgR_Round4"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd4, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round5}"
                     x:Uid="60_Results_dgR_Round5"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd5, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round6}"
                     x:Uid="60_Results_dgR_Round6"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd6, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round7}"
                     x:Uid="60_Results_dgR_Round7"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd7, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round8}"
                     x:Uid="60_Results_dgR_Round8"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd8, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round9}"
                     x:Uid="60_Results_dgR_Round9"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd9, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round10}"
                     x:Uid="60_Results_dgR_Round10"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd10, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round11}"
                     x:Uid="60_Results_dgR_Round11"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd11, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Round12}"
                     x:Uid="60_Results_dgR_Round12"
-                    IsReadOnly="True"/>
+                    IsReadOnly="True"
+                    Visibility="{x:Bind ViewModel.vRnd12, Mode=OneWay}"/>
                 <controls:DataGridTextColumn
                     Binding="{Binding Total}"
                     x:Uid="60_Results_dgR_Total"

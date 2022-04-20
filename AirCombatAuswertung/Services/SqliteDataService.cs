@@ -39,8 +39,6 @@ namespace AirCombatAuswertung.Services
                 await CreateScoresTableAsync(db);
 
                 await CreateResultsTableAsync(db);
-
-                await CreateResultsShowTableAsync(db);
             }
 
         }
@@ -317,27 +315,6 @@ namespace AirCombatAuswertung.Services
                                                                         Sum INTEGER,
                                                                         Total INTEGER,
                                                                         PRIMARY KEY(Startnr, Classnr, Round))";
-            var createTable = new SqliteCommand(tableCommand, db);
-            await createTable.ExecuteNonQueryAsync();
-        }
-        private async Task CreateResultsShowTableAsync(SqliteConnection db)
-        {
-            string tableCommand = @"CREATE TABLE IF NOT EXISTS ResultsShow (Startnr INTEGER NOT NULL,
-                                                                            Classnr INTEGER NOT NULL,
-                                                                            Round1 INTEGER,
-                                                                            Round2 INTEGER,
-                                                                            Round3 INTEGER,
-                                                                            Round4 INTEGER,
-                                                                            Round5 INTEGER,
-                                                                            Round6 INTEGER,
-                                                                            Round7 INTEGER,
-                                                                            Round8 INTEGER,
-                                                                            Round9 INTEGER,
-                                                                            Round10 INTEGER,
-                                                                            Round11 INTEGER,
-                                                                            Round12 INTEGER,
-                                                                            Total INTEGER,
-                                                                            PRIMARY KEY(Startnr, Classnr))";
             var createTable = new SqliteCommand(tableCommand, db);
             await createTable.ExecuteNonQueryAsync();
         }
@@ -1043,9 +1020,7 @@ namespace AirCombatAuswertung.Services
             {
                 Class c = new Class { Nr = r.Classnr };
                 Pilot p = new Pilot { Startnr = r.Startnr };
-
-                //Hole die max. Runde
-                var round = await GetOptionByNameAsync("AnzRnd" + c.Nr);
+                
                 if (r.Round == 12 && bool.Parse(GetOptionByNameAsync("Semi" + c.Nr).Result.Value))
                 {
                     var r3 = await GetResultAsync(c, 11, p);
@@ -1053,6 +1028,7 @@ namespace AirCombatAuswertung.Services
                 }
                 else
                 {
+                    var round = await GetOptionByNameAsync("AnzRnd" + c.Nr);
                     var r4 = await GetResultAsync(c, int.Parse(round.Value), p);
                     r.Total = r.Sum + r4.Total;
                 }                
