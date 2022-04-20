@@ -739,10 +739,10 @@
     <value>Round 10</value>
   </data>
   <data name="60_Results_dgR_Round11.Header" xml:space="preserve">
-    <value>Round 11</value>
+    <value>Semi final</value>
   </data>
   <data name="60_Results_dgR_Round12.Header" xml:space="preserve">
-    <value>Round 12</value>
+    <value>Final</value>
   </data>
   <data name="60_Results_dgR_Round2.Header" xml:space="preserve">
     <value>Round 2</value>
