@@ -873,7 +873,7 @@ namespace AirCombatAuswertung.ViewModels
                 Pilot p = await _dataService.GetPilotAsync(decimal.ToInt32(result.Startnr));
                 newRow.Firstname = p.Firstname;
                 newRow.Lastname = p.Lastname;
-                newRow.Nation = p.Nation;                
+                newRow.Nation = p.Nation;
                 if (newResultlist.FirstOrDefault(r => r.Startnr == newRow.Startnr) != null)
                 {
                     ///Do nothing
@@ -935,15 +935,19 @@ namespace AirCombatAuswertung.ViewModels
                             newResultlist.First(r => r.Startnr == newRow.Startnr).Round12 = result.Sum;
                             vRnd12 = Microsoft.UI.Xaml.Visibility.Visible;
                             break;
-                    }                    
+                    }
                 }
+            }
+            foreach (var csum in newResultlist)
+            {
+                csum.Total = csum.Round1 + csum.Round2 + csum.Round3 + csum.Round4 + csum.Round5 + csum.Round6 + csum.Round7 + csum.Round8 + csum.Round9 + csum.Round10 + csum.Round11 + csum.Round12;
             }
             Results.Clear();
             foreach (var item in newResultlist)
-            {                
+            {
                 Results.Add(item);
             }
-            
+
         }
         #region Commands
         public ICommand Rnd1Command { get; set; }
