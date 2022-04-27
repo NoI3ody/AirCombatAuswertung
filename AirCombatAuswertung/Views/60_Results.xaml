@@ -126,7 +126,8 @@
             Margin="{StaticResource SmallTopBottomMargin}"
             AutoGenerateColumns="False"
             ItemsSource="{x:Bind ViewModel.Results, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            Grid.Row="2">
+            Grid.Row="2"
+            CanUserSortColumns="True">
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn
                     Binding="{Binding Firstname}"

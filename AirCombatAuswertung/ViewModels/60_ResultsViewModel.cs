@@ -1,7 +1,9 @@
 ﻿using AirCombatAuswertung.Interfaces;
 using AirCombatAuswertung.Model;
-using System.Collections.Generic;
+using CommunityToolkit.WinUI.UI;
+using Microsoft.UI.Xaml.Data;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -11,6 +13,16 @@ namespace AirCombatAuswertung.ViewModels
     public class _60_ResultsViewModel : BindableBase
     {
         private ObservableCollection<ResultShow> _results = new ObservableCollection<ResultShow>();
+        private ICollectionView _resultsWrapper;
+        public ICollectionView ResultsWrapper
+        {
+            get { return _resultsWrapper; }
+            set
+            {
+                if (!SetProperty(ref _resultsWrapper, value, nameof(ResultsWrapper)))
+                    return;
+            }
+        }
         public _60_ResultsViewModel(IDataService dataService)
         {
             _dataService = dataService;
@@ -857,7 +869,7 @@ namespace AirCombatAuswertung.ViewModels
             set
             {
                 if (!SetProperty(ref _results, value, nameof(Results)))
-                    return;
+                    return;                
             }
         }
         private async Task CalculateResults(Class c, int r)
@@ -943,11 +955,11 @@ namespace AirCombatAuswertung.ViewModels
                 csum.Total = csum.Round1 + csum.Round2 + csum.Round3 + csum.Round4 + csum.Round5 + csum.Round6 + csum.Round7 + csum.Round8 + csum.Round9 + csum.Round10 + csum.Round11 + csum.Round12;
             }
             Results.Clear();
-            foreach (var item in newResultlist)
+            var nl = newResultlist.OrderByDescending(r => r.Total);
+            foreach (var item in nl)
             {
                 Results.Add(item);
             }
-
         }
         #region Commands
         public ICommand Rnd1Command { get; set; }
