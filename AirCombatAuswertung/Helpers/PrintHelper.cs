@@ -172,12 +172,13 @@ namespace AirCombatAuswertung.Helpers
         {
             this._directPrint = directPrint;
 
-            PrintManager printMan = PrintManager.GetForCurrentView();
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.StartupWindow);
+            PrintManager printMan = PrintManagerInterop.GetForWindow(hWnd);
             printMan.PrintTaskRequested += PrintTaskRequested;
 
             // Launch print process
             _printTaskName = printTaskName;
-            await PrintManager.ShowPrintUIAsync();
+            await PrintManagerInterop.ShowPrintUIForWindowAsync(hWnd);
         }
 
         /// <summary>
